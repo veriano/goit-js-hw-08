@@ -9,7 +9,6 @@ function onTimeUpdate(data) {
     const STORAGE_KEY = "videoplayer-current-time";
     const STORAGE_TIME = data.duration;
     localStorage.setItem(STORAGE_KEY, STORAGE_TIME);
-};
     
 player.setCurrentTime(localStorage.getItem(STORAGE_KEY)).then(function(seconds) {
     seconds = localStorage.getItem(STORAGE_KEY);
@@ -23,4 +22,5 @@ player.setCurrentTime(localStorage.getItem(STORAGE_KEY)).then(function(seconds) 
             // some other error occurred
             break;
     }
-});
+})
+};
