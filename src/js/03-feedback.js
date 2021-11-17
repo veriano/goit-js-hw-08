@@ -11,7 +11,8 @@ form.addEventListener('input', throttle(onFormValue, 500));
 const formData = {};
 
 function onFormValue(evt) {
-    formData[evt.target.name] = evt.target.value;
+    formData.email = form['email'].value;
+    formData.message = form['message'].value;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 };
 
