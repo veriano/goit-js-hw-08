@@ -15,13 +15,13 @@ function onFormValue(evt) {
     formData.message = form['message'].value;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 };
-
 populateInputs();
 
 function populateInputs() {
     const savedMessage = localStorage.getItem(STORAGE_KEY);
-    if (savedMessage) {
-        const getMessage = JSON.parse(savedMessage);
+    const getMessage = JSON.parse(savedMessage);
+
+    if (getMessage) {
         console.log(getMessage);
     input.value = getMessage.email,
     textarea.value = getMessage.message;
@@ -36,5 +36,6 @@ function onFormSubmit(evt) {
     localStorage.removeItem(STORAGE_KEY);
     console.log(formData);
 };
+
 
 
